@@ -19,6 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  overflow: hidden;
 }
 
 .header-container {
@@ -91,6 +92,9 @@ h1 {
 }
 
 footer {
+  position: relative;
+  z-index: 10;
+  background: white;
   padding: 0.75rem;
   flex-shrink: 0;
 }
@@ -105,16 +109,22 @@ footer {
 }
 
 /* Style for primary links like About */
-.footer-links a.primary {
-  color: #000;
-  font-weight: 600;
+.footer-links a.primary,
+.footer-links a.secondary {
+  font-weight: normal; /* Make all links normal weight by default */
   text-decoration: none;
 }
 
-/* Style for secondary links like Terms & Privacy */
+.footer-links a.primary {
+  color: #000;
+}
+
 .footer-links a.secondary {
   color: rgba(0, 0, 0, 0.5);
-  text-decoration: none;
+}
+
+.footer-links a.active {
+  font-weight: 600; /* Make active link bold */
 }
 
 .footer-links a:hover {
@@ -254,14 +264,18 @@ footer {
 }
 
 .content {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fff;
   padding: 3rem 4rem;
   border-radius: 0px;
-  backdrop-filter: blur(5px);
   max-width: 1000px;
-  margin: 3rem auto;
+  margin: 1rem auto;
   text-align: left;
   line-height: 1.6;
+  overflow-y: auto;
+  flex: 1;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .content h2 {
@@ -272,6 +286,7 @@ footer {
 .content p {
   margin-bottom: 1.5rem;
   color: #444;
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -317,5 +332,15 @@ footer {
 
 .waitlist-button:hover {
   color: #18ab7d;
+  text-decoration: underline;
+}
+
+.content a {
+  color: #1bc28c;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.content a:hover {
   text-decoration: underline;
 }
