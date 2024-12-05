@@ -149,11 +149,24 @@
           let touchEndX = 0;
 
           function showSlide(index) {
-            screenshots.forEach((slide) => slide.classList.remove("active"));
-            dots.forEach((dot) => dot.classList.remove("active"));
+            screenshots.forEach((slide, i) => {
+              slide.classList.remove("active", "prev", "next");
 
-            screenshots[index].classList.add("active");
-            dots[index].classList.add("active");
+              if (i === index) {
+                slide.classList.add("active");
+              } else if (
+                i ===
+                (index - 1 + screenshots.length) % screenshots.length
+              ) {
+                slide.classList.add("prev");
+              } else if (i === (index + 1) % screenshots.length) {
+                slide.classList.add("next");
+              }
+            });
+
+            dots.forEach((dot, i) => {
+              dot.classList.toggle("active", i === index);
+            });
           }
 
           function nextSlide() {
