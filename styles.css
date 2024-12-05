@@ -109,10 +109,9 @@ footer {
   box-sizing: border-box;
 }
 
-/* Style for primary links like About */
 .footer-links a.primary,
 .footer-links a.secondary {
-  font-weight: normal; /* Make all links normal weight by default */
+  font-weight: normal;
   text-decoration: none;
 }
 
@@ -125,7 +124,7 @@ footer {
 }
 
 .footer-links a.active {
-  font-weight: 600; /* Make active link bold */
+  font-weight: 600;
 }
 
 .footer-links a:hover {
@@ -136,12 +135,10 @@ footer {
   color: rgba(0, 0, 0, 0.5);
 }
 
-/* Hide slideshow nav by default */
 .slideshow-nav {
   display: none;
 }
 
-/* Show slideshow nav only on mobile */
 @media (max-width: 768px) {
   .slideshow-nav {
     display: flex;
@@ -161,15 +158,6 @@ footer {
   .slide-dot.active {
     background-color: #1bc28c;
   }
-}
-
-/* Remove the duplicate rule */
-@media (min-width: 769px) {
-  /* Remove this since we're hiding by default
-  .slideshow-nav {
-    display: none;
-  } 
-  */
 }
 
 .slideshow-buttons {
@@ -242,16 +230,14 @@ footer {
     left: 60%;
   }
 
-  /* Hide content in preview slides */
   .screenshot.prev .screenshot-content,
   .screenshot.next .screenshot-content {
     display: none;
   }
 
-  /* Adjust image position in preview slides */
   .screenshot.prev img,
   .screenshot.next img {
-    margin-bottom: 0; /* Remove margin since we're not showing content */
+    margin-bottom: 0;
   }
 
   .screenshot img {
@@ -270,7 +256,6 @@ footer {
     padding: 0 10px;
   }
 
-  /* Navigation dots */
   .slideshow-nav {
     display: flex;
     justify-content: center;
@@ -294,7 +279,6 @@ footer {
     padding-bottom: 80px;
   }
 
-  /* Make footer sticky on mobile only */
   footer {
     position: fixed;
     bottom: 0;
@@ -305,7 +289,7 @@ footer {
   }
 
   body {
-    padding-bottom: 60px; /* Add padding only on mobile */
+    padding-bottom: 60px;
   }
 
   .container {
@@ -318,7 +302,6 @@ footer {
 }
 
 @media (min-width: 769px) {
-  /* Move homepage-specific styles to a new class */
   .home-page {
     height: 100vh;
     overflow: hidden;
@@ -326,7 +309,6 @@ footer {
     flex-direction: column;
   }
 
-  /* Keep other desktop styles as they are */
   .container {
     flex: 1;
     display: flex;
@@ -438,7 +420,6 @@ footer {
   font-weight: 400;
 }
 
-/* Ensure headings and paragraphs inherit the alignment */
 .screenshot-content h3,
 .screenshot-content p {
   text-align: inherit;
@@ -495,7 +476,6 @@ footer {
   text-decoration: underline;
 }
 
-/* Add this new class for scrollable content */
 .content-scrollable {
   overflow-y: auto;
 }

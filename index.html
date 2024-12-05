@@ -14,13 +14,16 @@
     <link rel="shortcut icon" href="favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
-      sizes="180x180"
       href="favicon/apple-touch-icon.png"
+      sizes="180x180"
     />
     <link rel="manifest" href="favicon/site.webmanifest" />
 
     <title>Gogomi</title>
     <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:image" content="favicon/favicon.svg" />
+    <meta property="og:type" content="website" />
   </head>
   <body class="home-page">
     <div class="container">
@@ -77,7 +80,10 @@
 
       <div class="screenshots-container">
         <div class="screenshot active">
-          <img src="imgs/walks1.png" alt="Track your walks" />
+          <img
+            src="https://gogomibranding.blob.core.windows.net/gogomi-assets/walks-general.jpg"
+            alt="Track your walks"
+          />
           <div class="screenshot-content">
             <h3>Your Walking Story</h3>
             <p>
@@ -87,7 +93,10 @@
           </div>
         </div>
         <div class="screenshot">
-          <img src="imgs/summary2.png" alt="Progress summary" />
+          <img
+            src="https://gogomibranding.blob.core.windows.net/gogomi-assets/summary.jpg"
+            alt="Progress summary"
+          />
           <div class="screenshot-content">
             <h3>See Your Progress</h3>
             <p>
@@ -97,7 +106,10 @@
           </div>
         </div>
         <div class="screenshot">
-          <img src="imgs/allwalks2.png" alt="All walks view" />
+          <img
+            src="https://gogomibranding.blob.core.windows.net/gogomi-assets/walks-unexplored.jpg"
+            alt="All walks view"
+          />
           <div class="screenshot-content">
             <h3>Discover Hidden Gems</h3>
             <p>
@@ -141,10 +153,8 @@
           const dots = document.querySelectorAll(".slide-dot");
           let currentSlide = 0;
 
-          // Show first slide
           screenshots[0].classList.add("active");
 
-          // Initialize touch handling
           let touchStartX = 0;
           let touchEndX = 0;
 
@@ -180,7 +190,6 @@
             showSlide(currentSlide);
           }
 
-          // Touch events
           const container = document.querySelector(".screenshots-container");
 
           container.addEventListener("touchstart", (e) => {
@@ -205,7 +214,6 @@
             }
           }
 
-          // Dot navigation
           dots.forEach((dot, index) => {
             dot.addEventListener("click", () => {
               currentSlide = index;
@@ -213,7 +221,6 @@
             });
           });
 
-          // Auto advance slides every 5 seconds
           setInterval(nextSlide, 5000);
         }
       });
